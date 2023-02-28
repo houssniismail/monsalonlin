@@ -39,7 +39,8 @@ class controllerbande extends Controller
      */
     public function show(string $id)
     {
-        //
+        $bland = blandes::find($id);
+        return view('blandes/show')->with('blandes',$bland);
     }
 
     /**
@@ -47,7 +48,9 @@ class controllerbande extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $bland = blandes::find($id);
+        return view('blandes/edit')->with('blandes',$bland);
+
     }
 
     /**
@@ -55,7 +58,10 @@ class controllerbande extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $bland = blandes::find($id);
+        $input = $request->all();
+        $bland->update($input);
+        return redirect('blandes')->with('flash_message','band updated');
     }
 
     /**
@@ -63,6 +69,7 @@ class controllerbande extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        blandes::destroy($id);
+        return redirect('blandes')->with('flash_message','band deleted');
     }
 }

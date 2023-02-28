@@ -36,22 +36,22 @@
             <tbody>
                 @foreach ($blandes as $item)
                 <tr>
-                    <td class="text-center">{{$item['id_bande']}}</td>
+                    <td class="text-center">{{$item['id']}}</td>
                     <td class="text-center">{{$item['nom']}}</td>
                     <td class="text-center">{{$item['image']}}</td>
                     <td class="text-center">{{$item['membres']}}</td>
                     <td class="text-center">{{$item['pays']}}</td>
                     <td class="text-center">{{$item['date_de_création']}}</td>
                     <td class="text-center">
-                        {{-- <button class="bg-blue-400 text-gray-50 p-2 rounded w-16"><a href="{{ url('/serves/' . $item['id'])}}">Show</a></button>
-                        <button class="bg-green-400 text-gray-50 p-2 rounded w-16"><a href="{{ url('/serves/' . $item['id'] .'/edit')}}">edit</a></button>
+                        <button class="bg-blue-400 text-gray-50 p-2 rounded w-16"><a href="{{ url('/blandes/' . $item['id'])}}">Show</a></button>
+                         <button class="bg-green-400 text-gray-50 p-2 rounded w-16"><a href="{{ url('/blandes/' . $item['id'] .'/edit')}}">edit</a></button>
                         <button>
-                            <form method="POST" action="{{'/serves' .'/'.$item['id']}}" >
+                            <form method="POST" action="{{'/blandes' .'/'.$item['id']}}" >
                                 {{ method_field('DELETE')}}
                                 {{csrf_field()}}
                                 <button type="submit" class="bg-red-900 text-gray-50 p-2 rounded w-16" onclick=" return confirm('confirm delete')">delete</button>
                             </form> 
-                        </button> --}}
+                        </button>
                     </td>
                 </tr>
                 @endforeach

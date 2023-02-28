@@ -9,6 +9,6 @@ class blandes extends Model
 {
     use HasFactory;
     protected $table ='bande';
-    protected $primaryKey ='id_bande';
+    protected $primaryKey ='id';
     protected $fillable=['nom', 'image', 'membres', 'pays', 'date_de_création'];
 }
